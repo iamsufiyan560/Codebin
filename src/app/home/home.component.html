@@ -1,0 +1,20 @@
+@if(items.length == 0){
+
+<div class="lds-ring">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+}
+
+<div>
+  <ul>
+    @for (item of items; track item.id) {
+    <li>
+      <a [routerLink]="['/snippet', item.id]">{{ item.title }}</a>
+    </li>
+    }
+  </ul>
+</div>
