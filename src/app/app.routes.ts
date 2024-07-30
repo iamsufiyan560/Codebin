@@ -3,6 +3,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CreateBinComponent } from './create-bin/create-bin.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
   {
@@ -13,7 +14,7 @@ export const routes: Routes = [
     path: 'signup',
     component: SignupComponent,
   },
-  { path: 'create', component: CreateBinComponent },
+  { path: 'create', component: CreateBinComponent, canActivate: [authGuard] },
   {
     path: 'about',
     loadComponent: () =>
